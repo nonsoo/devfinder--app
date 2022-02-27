@@ -6,11 +6,15 @@ import "./css/layout.css";
 import Profile from "./Components/Profile";
 
 import axios from "axios";
+import moment from "moment";
 
 const App: FC = () => {
   const [searchUser, setSearchUser] = useState<string>("");
   const [resProfile, setResProfile] = useState<any>();
   const [notFound, setNotFound] = useState<Boolean>(false);
+
+  const dateCon = moment(resProfile?.created_at).format("MMM Do YYYY");
+
   const getUser = async (e: any): Promise<void> => {
     e.preventDefault();
     axios
@@ -54,7 +58,7 @@ const App: FC = () => {
             userName={resProfile?.name}
             profImg={resProfile.avatar_url}
             acctName={resProfile.login}
-            date="Jan 25 2011"
+            date={dateCon.toString()}
             descri={resProfile.bio}
             repoNumb={resProfile.public_repos}
             followerNumb={resProfile.followers}
