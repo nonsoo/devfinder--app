@@ -27,6 +27,7 @@ const App: FC = () => {
         setNotFound(true);
         setResProfile(null);
       });
+    setSearchUser("");
   };
   return (
     <div className="App">
