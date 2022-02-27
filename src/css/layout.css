@@ -29,4 +29,162 @@
   --col-accent-prmy: #1c6efc;
 
   --col-text-prmy: #ffffff;
+
+  /* Border Radius */
+  --borderRadius-prmy: 15px;
+}
+
+.App {
+  background-color: var(--col-background-prmy);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  font-size: var(--fs-prmy);
+  font-family: var(--ff-prmy);
+  font-weight: var(--fw-prmy);
+  color: var(--col-text-prmy);
+  padding: 2rem;
+}
+
+.Wrapper {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.Title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Title__Name {
+  font-weight: var(--fw-tri);
+  font-size: var(--fs-tri);
+}
+
+.Title__Toggle {
+  text-transform: uppercase;
+}
+
+.Title__Toggle span {
+  display: inline-block;
+  margin-left: 0.5em;
+
+  font-size: 1rem;
+}
+
+.searchBar {
+  padding: 1.25em;
+  margin-top: 2em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+
+  background-color: var(--col-background-sec);
+
+  border-radius: var(--borderRadius-prmy);
+}
+
+.searchBar__Icon {
+  color: var(--col-accent-prmy);
+  font-size: 2.5em;
+}
+
+.searchBar__Field {
+  width: 85%;
+
+  border: none;
+  background-color: var(--col-background-sec);
+  color: var(--col-text-prmy);
+
+  font-size: var(--fs-sec);
+  font-weight: var(--fw-sec);
+  font-family: var(--ff-prmy);
+
+  padding: 0.75em;
+}
+
+.SearchBar__btn {
+  border: none;
+  padding: 1em 2em;
+
+  background-color: var(--col-accent-prmy);
+  cursor: pointer;
+  border-radius: var(--borderRadius-prmy);
+
+  color: var(--col-text-prmy);
+  font-family: var(--ff-prmy);
+  font-size: var(--fs-prmy);
+}
+
+.Profile {
+  background-color: var(--col-background-sec);
+  padding: 1em;
+  margin-top: 3em;
+  border-radius: var(--borderRadius-prmy);
+}
+
+.ProfileHeader {
+  display: flex;
+  gap: 2em;
+}
+
+.Profile__Name {
+  font-size: var(--fs-sec);
+  font-weight: var(--fw-tri);
+}
+
+.Profile__Acct {
+  margin: 0.75em 0;
+  color: var(--col-accent-prmy);
+}
+
+.Profile__Img {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background-color: var(--col-background-prmy);
+}
+
+.Profile__Descri {
+  width: 100%;
+  margin-top: 1.75em;
+
+  text-align: left;
+}
+
+.Profile__Stats {
+  background-color: var(--col-background-prmy);
+
+  border-radius: var(--borderRadius-prmy);
+  padding: 1em;
+  margin-top: 2.5em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Profile__StatsStat {
+  font-weight: var(--fw-tri);
+  font-size: var(--fs-sec);
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+@media screen and (min-width: 800px) {
+  .Profile {
+    padding: 2em;
+  }
+
+  .Profile__Descri {
+    text-align: center;
+  }
+  .Profile__Stats {
+    padding: 2em;
+  }
 }
