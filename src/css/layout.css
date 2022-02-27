@@ -176,6 +176,19 @@
   margin-top: 0.5em;
 }
 
+.Links {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2em;
+  gap: 1.25em;
+  align-items: center;
+}
+
+.Links span {
+  margin-left: 0.5em;
+}
+
 @media screen and (min-width: 800px) {
   .Profile {
     padding: 2em;
@@ -186,5 +199,10 @@
   }
   .Profile__Stats {
     padding: 2em;
+  }
+
+  .Links {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

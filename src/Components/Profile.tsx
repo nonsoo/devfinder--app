@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { MdLocationPin } from "react-icons/md";
+import { FaLink, FaTwitter } from "react-icons/fa";
 
 const Profile: FC = () => {
   return (
@@ -33,6 +35,21 @@ const Profile: FC = () => {
         <div className="Profile__StatsCon">
           <p className="Profile__StatsTitle">Following</p>
           <p className="Profile__StatsStat">3</p>
+        </div>
+      </div>
+
+      <div className="Links">
+        <div className="Links__Location">
+          <MdLocationPin className="Links__Icons" />
+          <span>My location</span>
+        </div>
+        <div className="Links__Website">
+          <FaLink className="Links__Icons" />
+          <span>website is here</span>
+        </div>
+        <div className="Links__Twitter">
+          <FaTwitter className="Links__Icons" />
+          <span>@twitter</span>
         </div>
       </div>
     </section>
