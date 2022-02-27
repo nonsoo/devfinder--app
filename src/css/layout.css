@@ -205,6 +205,31 @@
   margin-left: 0.5em;
 }
 
+.Orgs {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2em;
+
+  border-radius: var(--borderRadius-prmy);
+  background-color: var(--col-background-prmy);
+
+  transition: 2s ease-in-out;
+}
+
+.Orgs:hover {
+  transform: translateY(50px);
+}
+
+.Orgs__Img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 @media screen and (min-width: 800px) {
   .Profile {
     padding: 2em;
