@@ -54,6 +54,22 @@
   width: 100%;
 }
 
+.message {
+  font-size: var(--fs-sec);
+  font-weight: var(--fw-tri);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+
+  padding: 1em;
+  background-color: var(--col-background-sec);
+  border-radius: var(--borderRadius-prmy);
+}
+
 .Title {
   display: flex;
   justify-content: space-between;

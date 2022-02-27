@@ -10,12 +10,19 @@ import axios from "axios";
 const App: FC = () => {
   const [searchUser, setSearchUser] = useState<string>("");
   const [resProfile, setResProfile] = useState<any>();
+  const [notFound, setNotFound] = useState<Boolean>(false);
   const getUser = async (e: any): Promise<void> => {
     e.preventDefault();
-    const response = await axios.get(
-      `https://api.github.com/users/${searchUser}`
-    );
-    setResProfile(response.data);
+    axios
+      .get(`https://api.github.com/users/${searchUser}`)
+      .then((res) => {
+        setResProfile(res.data);
+        setNotFound(false);
+      })
+      .catch(() => {
+        setNotFound(true);
+        setResProfile(null);
+      });
   };
   return (
     <div className="App">
@@ -42,7 +49,7 @@ const App: FC = () => {
             Search
           </button>
         </form>
-        {resProfile && (
+        {resProfile ? (
           <Profile
             userName={resProfile?.name}
             profImg={resProfile.avatar_url}
@@ -56,6 +63,11 @@ const App: FC = () => {
             website={resProfile.blog}
             twitter={resProfile.twitter_username}
           />
+        ) : (
+          <div className="message">
+            <p>Search a user to see their Profile</p>
+            {notFound && <p>Profile not found</p>}
+          </div>
         )}
       </div>
     </div>
