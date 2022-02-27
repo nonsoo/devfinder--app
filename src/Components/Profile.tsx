@@ -2,54 +2,71 @@ import { FC } from "react";
 import { MdLocationPin } from "react-icons/md";
 import { FaLink, FaTwitter } from "react-icons/fa";
 
-const Profile: FC = () => {
+interface Props {
+  profImg: string;
+  userName: string;
+  acctName: string;
+  date: string;
+  descri: string;
+  repoNumb: number;
+  followingNumb: number;
+  followerNumb: number;
+  location: string;
+  website: string;
+  twitter: string;
+}
+const Profile: FC<Props> = ({
+  userName,
+  acctName,
+  date,
+  descri = "This profile has no bio",
+  repoNumb,
+  followerNumb,
+  followingNumb,
+  location = "Not Available",
+  website = "Not Available",
+  twitter = "Not Available",
+  profImg,
+}) => {
   return (
     <section className="Profile">
       <div className="ProfileHeader">
-        <div className="Profile__Img"></div>
+        <img src={profImg} alt="Profile img" className="Profile__Img" />
         <div className="ProfileHeader__Text">
-          <p className="Profile__Name">The Octocat</p>
-          <p className="Profile__Acct">@octocat</p>
-          <span className="Profile__JoinDate">Joined 25 Jan 2011</span>
+          <p className="Profile__Name">{userName}</p>
+          <p className="Profile__Acct">@{acctName}</p>
+          <span className="Profile__JoinDate">Joined {date}</span>
         </div>
       </div>
-      <p className="Profile__Descri">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam saepe
-        vero velit, atque explicabo fugiat error fuga ad tempore recusandae
-        laboriosam magnam eius ab, iure molestias. Nihil doloremque odit magni.
-        Vitae earum neque aspernatur. Eius consectetur a fuga veritatis
-        possimus, nemo dignissimos blanditiis itaque sunt, ipsam quod asperiores
-        laborum eligendi porro nulla voluptatibus similique adipisci? Ex
-        sapiente commodi consequuntur hic!
-      </p>
+      <p className="Profile__Descri">{descri}</p>
 
       <div className="Profile__Stats">
         <div className="Profile__StatsCon">
           <p className="Profile__StatsTitle">Repos</p>
-          <p className="Profile__StatsStat">8</p>
+          <p className="Profile__StatsStat">{repoNumb}</p>
         </div>
         <div className="Profile__StatsCon">
           <p className="Profile__StatsTitle">Followers</p>
-          <p className="Profile__StatsStat">8434</p>
+          <p className="Profile__StatsStat">{followerNumb}</p>
         </div>
         <div className="Profile__StatsCon">
           <p className="Profile__StatsTitle">Following</p>
-          <p className="Profile__StatsStat">3</p>
+          <p className="Profile__StatsStat">{followingNumb}</p>
         </div>
       </div>
 
       <div className="Links">
         <div className="Links__Location">
           <MdLocationPin className="Links__Icons" />
-          <span>My location</span>
+          <span>{location}</span>
         </div>
         <div className="Links__Website">
           <FaLink className="Links__Icons" />
-          <span>website is here</span>
+          <span>{website}</span>
         </div>
         <div className="Links__Twitter">
           <FaTwitter className="Links__Icons" />
-          <span>@twitter</span>
+          <span>@{twitter}</span>
         </div>
       </div>
     </section>
